@@ -1,88 +1,49 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ProyectoWebSemana1</title>
-     <style>
-            body {
-                font-family: 'Segoe UI', sans-serif;
-                color:#334155;
-                background-color:#F1f5f9;
-                margin: 0;
-            }
-
-            .arriba {
-                background-color: #02143f;
-                color: white;
-                padding:15px;
-                text-align:center;
-            } 
-
-            .menu {
-                background-color: #435a80;
-                padding: 5px 20px;
-            }
-
-            .menu ul {
-                display: flex;
-                justify-content: space-between;
-                list-style: none;
-                padding: 0;
-                margin: 0;
-            }
-
-            .menu ul li a {
-                color: #38bdf8;
-                font-weight: bold;
-                text-decoration: none;
-                cursor: pointer;
-            }
-
-            main{
-                padding: 30px;
-            }
-
-            section {
-                background-color: #ffffff;
-                padding: 20px;
-                margin-bottom: 20px;
-                border-radius: 8px;
-                box-shadow: 0 2px 4px rgba(151, 61, 61, 0.05);
-            }
-        </style>
+    <title>ProyectoWebSemana2</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
     <header class="arriba">
-        <h1> Bienvenidos Docentes del Aula Futurista</h1>
-    </header>   
-    <nav class="menu"> 
+        <h1>Bienvenidos Docentes del Aula Futurista</h1>
+    </header> 
+
+    <!-- 1. Cambiamos la clase 'menu' por 'navbar' -->
+    <nav class="navbar"> 
         <ul>
-            <li>
-                <a> 🏫 Inicio</a>
-            </li>
-            <li>
-                <a> 📚 Recursos Académicos</a>
-            </li>
+            <li><a>🏫 Inicio</a></li>
+            <li><a>📚 Recursos Académicos</a></li>
         </ul>
     </nav>
+
     <main>
+        <!-- 2. Primera tarjeta con la clase tarjeta-modulo -->
         <section class="tarjeta-modulo"> 
             <h2>¡Bienvenidos a bordo del Aula Futurista!</h2>
             <article>
                Este espacio digital ha sido diseñado especialmente para ustedes, docentes de nivel medio, como un centro de mando donde encontrarán un completo repositorio de materiales, guías y recursos interactivos listos para llevar al salón de clases. En la actualidad, el área de lectura en el curso de Comunicación y Lenguaje va mucho más allá de decodificar palabras o memorizar textos: es la llave para que nuestros estudiantes aprendan a analizar, cuestionar, interpretar y argumentar en un mundo impregnado de información. Por eso, impulsaremos este aprendizaje bajo la estrategia de la Lectura Crítica e Interpretativa, un enfoque práctico que ayuda a desglosar discursos, identificar ideas implícitas, evaluar perspectivas y construir significados con pensamiento reflexivo y creativo. ¡Exploren, descarguen e inspírense; juntos estamos formando a los pensadores, lectores analíticos y comunicadores del mañana!
             </article>
         </section>
-        <section>
+
+        <!-- 3. Segunda tarjeta también con la clase tarjeta-modulo -->
+        <section class="tarjeta-modulo">
             <h2>Objetivos</h2>
-        <ul>
-            <li>Proveer a los docentes un repositorio digital centralizado con guías, proyectos, actividades gamificadas y evaluaciones de comprensión lectora adaptadas al currículo de nivel medio.</li>
-            <li>Diseñar e implementar secuencias didácticas fundamentadas en la lectura crítica e interpretativa para promover el análisis profundo, el pensamiento reflexivo y la evaluación de discursos en el aula.</li>
-            <li>Acompañar y fortalecer la práctica docente en la enseñanza de la lectura analítica y la comunicación eficaz.</li>
-            <li>Promover la alfabetización informacional y la lectura ética y crítica de textos en medios impresos y digitales.</li>
-        </ul>
+            <ul>
+                <li>Proveer a los docentes un repositorio digital centralizado con guías, proyectos, actividades gamificadas y evaluaciones de comprensión lectora adaptadas al currículo de nivel medio.</li>
+                <li>Diseñar e implementar secuencias didácticas fundamentadas en la lectura crítica e interpretativa para promover el análisis profundo, el pensamiento reflexivo y la evaluación de discursos en el aula.</li>
+                <li>Acompañar y fortalecer la práctica docente en la enseñanza de la lectura analítica y la comunicación eficaz.</li>
+                <li>Promover la alfabetización informacional y la lectura ética y crítica de textos en medios impresos y digitales.</li>
+            </ul>
         </section>
     </main>
-    
+
+    <footer>
+        <p>Elaborado por: PEM Bilda Quelex (2026)</p>
+    </footer>
+
 </body>
 </html>

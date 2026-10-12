@@ -1,0 +1,88 @@
+/* --- ESTILOS GENERALES Y BASE --- */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #334155;
+    background-color: #F1f5f9;
+    margin: 0;
+    padding: 0;
+}
+
+/* --- ENCABEZADO --- */
+.arriba {
+    background-color: #02143f; /* Azul institucional oscuro */
+    color: white;
+    padding: 15px;
+    text-align: center;
+} 
+
+/* --- 1. SELECTOR DE CLASE .navbar --- */
+.navbar {
+    background-color: #435a80; /* Azul institucional secundario */
+    padding: 10px 25px;         /* Padding interno vertical y horizontal */
+}
+
+/* Flexbox para los elementos del menú dentro de .navbar */
+.navbar ul {
+    display: flex;                  
+    justify-content: space-between; 
+    align-items: center;            
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.navbar ul li a {
+    color: #38bdf8;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* --- CONTENEDOR PRINCIPAL CON FLEXBOX Y GAP --- */
+main {
+    padding: 30px;
+    max-width: 1100px;
+    margin: 0 auto;                 /* Centrado horizontal */
+    display: flex;                  /* Activamos Flexbox */
+    flex-direction: column;         /* Apilamos las tarjetas verticalmente */
+    gap: 25px;                      /* Espacio uniforme (gap) entre tarjetas */
+}
+
+/* --- 2. SELECTOR DE CLASE .tarjeta-modulo --- */
+.tarjeta-modulo {
+    background-color: #ffffff;
+    padding: 25px;                           /* Margen interno (padding) */
+    border: 1px solid #cbd5e1;               /* Borde suave */
+    border-left: 6px solid #02143f;          /* Borde institucional resaltado */
+    border-radius: 8px;                      /* Esquinas redondeadas */
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.08); /* Sombra suave */
+    box-sizing: border-box;                 /* Respetar el ancho con el padding */
+}
+
+.tarjeta-modulo h2 {
+    margin-top: 0;
+    color: #02143f;                         /* Color institucional para títulos */
+}
+
+.tarjeta-modulo article {
+    line-height: 1.6;
+    text-align: justify;
+}
+
+.tarjeta-modulo ul {
+    padding-left: 20px;
+    line-height: 1.6;
+}
+
+.tarjeta-modulo ul li {
+    margin-bottom: 8px;
+}
+
+/* Pie de página */
+footer {
+    text-align: center;
+    padding: 15px;
+    color: #64748b;
+    font-size: 0.9rem;
+    margin-top: 10px;
+}
