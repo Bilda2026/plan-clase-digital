@@ -51,12 +51,19 @@ main {
 /* --- 2. SELECTOR DE CLASE .tarjeta-modulo --- */
 .tarjeta-modulo {
     background-color: #ffffff;
-    padding: 25px;                           /* Margen interno (padding) */
-    border: 1px solid #cbd5e1;               /* Borde suave */
+    padding: 25px;                             
+    border: 1px solid #e2e8f0;                 /* Borde sutil y limpio */
     border-left: 6px solid #02143f;          /* Borde institucional resaltado */
-    border-radius: 8px;                      /* Esquinas redondeadas */
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.08); /* Sombra suave */
-    box-sizing: border-box;                 /* Respetar el ancho con el padding */
+    border-radius: 10px;                       /* Esquinas ligeramente más modernas */
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05); /* Sombra base delicada */
+    box-sizing: border-box;                   
+    transition: all 0.3s ease;                 /* Transición suave para efectos */
+}
+
+/* Efecto al pasar el cursor por encima de la tarjeta */
+.tarjeta-modulo:hover {
+    box-shadow: 0 10px 20px -3px rgba(2, 20, 63, 0.15); /* Sombra profunda con tono azulado */
+    transform: translateY(-3px);               /* Eleva sutilmente la tarjeta */
 }
 
 .tarjeta-modulo h2 {
