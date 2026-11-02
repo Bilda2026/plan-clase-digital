@@ -24,7 +24,9 @@ export default function HeaderClase({ tituloTema, nombreDocente, horario }) {
         borderRadius: '8px', 
         background: '#f9f9f9',
         boxShadow: '0 2px 5px rgba(0,0,0,0.05)',
-        cursor: 'default'
+        cursor: 'default',
+        boxSizing: 'border-box',
+        width: '100%'
       }}
     >
       <div style={{ 
@@ -35,7 +37,7 @@ export default function HeaderClase({ tituloTema, nombreDocente, horario }) {
         gap: '1rem'
       }}>
         {/* Lado izquierdo: Título y subtítulo */}
-        <div style={{ flex: '1 1 300px' }}>
+        <div style={{ flex: '1 1 250px', boxSizing: 'border-box' }}>
           <span style={{ 
             fontSize: '0.8rem', 
             color: '#6366f1', 
@@ -56,13 +58,14 @@ export default function HeaderClase({ tituloTema, nombreDocente, horario }) {
           </h1>
         </div>
 
-        {/* Lado derecho: Información del docente */}
+        {/* Lado derecho: Información del docente (Ajustado para dispositivos móviles) */}
         <div style={{ 
-          textAlign: 'right', 
+          flex: '1 1 200px',
+          textAlign: 'left', // Cambia a 'left' en móvil o se alinea según convenga
           fontSize: '0.9rem', 
           color: '#374151',
           lineHeight: '1.5',
-          minWidth: '180px'
+          minWidth: 'unset' // Evita que fuerce un ancho fijo no deseado
         }}>
           <p style={{ margin: '0 0 0.2rem 0' }}>
             <strong>Docente:</strong> {nombreDocente}
