@@ -1,11 +1,10 @@
+// src/components/ActividadItem.jsx
 import React, { useState } from 'react';
+import { motion } from 'framer-motion';
 
 export default function ActividadItem({ numero, descripcion, dificultad = 'Media' }) {
   // Hook useState para controlar si la actividad está completada o no
   const [completada, setCompletada] = useState(false);
-  
-  // Estado local para manejar el efecto hover con estilos en línea de forma fluida
-  const [isHovered, setIsHovered] = useState(false);
 
   const toggleCompletada = () => {
     setCompletada(!completada);
@@ -27,9 +26,21 @@ export default function ActividadItem({ numero, descripcion, dificultad = 'Media
   const config = obtenerConfigDificultad(dificultad);
 
   return (
-    <div 
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
+    <motion.div 
+      // 1. Animación de aparición (fade-in y desplazamiento vertical)
+      initial={{ opacity: 0, y: 15 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.4 }}
+
+      // 2. Animaciones fluidas de interacción al pasar el cursor y hacer clic
+      whileHover={{ 
+        scale: 1.01, 
+        y: -2,
+        borderColor: '#38bdf8',
+        boxShadow: '0 10px 25px -5px rgba(2, 20, 63, 0.12), 0 8px 10px -6px rgba(2, 20, 63, 0.08)'
+      }}
+      whileTap={{ scale: 0.99 }}
+
       style={{ 
         display: 'flex', 
         flexDirection: 'column',
@@ -37,13 +48,10 @@ export default function ActividadItem({ numero, descripcion, dificultad = 'Media
         margin: '0.75rem 0', 
         borderRadius: '8px', 
         border: '1px solid',
-        borderColor: isHovered ? '#38bdf8' : '#e2e8f0',
+        borderColor: '#e2e8f0',
         background: completada ? '#f0fdf4' : '#ffffff',
-        boxShadow: isHovered 
-          ? '0 10px 25px -5px rgba(2, 20, 63, 0.12), 0 8px 10px -6px rgba(2, 20, 63, 0.08)' 
-          : '0 1px 3px rgba(2, 20, 63, 0.05)',
-        transform: isHovered ? 'translateY(-2px)' : 'translateY(0)',
-        transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)'
+        boxShadow: '0 1px 3px rgba(2, 20, 63, 0.05)',
+        cursor: 'pointer'
       }}
     >
       {/* Cabecera de la actividad con el título y botón de estado */}
@@ -62,7 +70,10 @@ export default function ActividadItem({ numero, descripcion, dificultad = 'Media
         </div>
         
         <button 
-          onClick={toggleCompletada}
+          onClick={(e) => {
+            e.stopPropagation(); // Evita conflictos con el contenedor si se requiere
+            toggleCompletada();
+          }}
           style={{ 
             padding: '0.4rem 0.8rem', 
             border: 'none', 
@@ -89,6 +100,6 @@ export default function ActividadItem({ numero, descripcion, dificultad = 'Media
           <div style={{ width: config.ancho, height: '100%', backgroundColor: config.color, transition: 'width 0.4s ease' }} />
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }
