@@ -3,42 +3,62 @@ import React from 'react';
 import HeaderClase from './components/HeaderClase';
 import ObjetivosCard from './components/ObjetivosCard';
 import ActividadItem from './components/ActividadItem';
+import ListaActividades from './components/ListaActividades';
 
-function App() {
+export default function App() {
   return (
-    <div style={{ maxWidth: '800px', margin: '2rem auto', padding: '0 1rem', fontFamily: 'Arial, sans-serif' }}>
-      {/* 1. Componente de Encabezado */}
+    <div style={{ 
+      maxWidth: '800px', 
+      width: '100%', 
+      margin: '0 auto', 
+      padding: '1rem', 
+      boxSizing: 'border-box', 
+      fontFamily: 'Segoe UI, sans-serif',
+      overflowX: 'hidden' 
+    }}>
+      
+      <div style={{ textAlign: 'center', marginBottom: '1.5rem' }}>
+        <h1>Plan de Clase Digital Interactivo</h1>
+        <p>Bienvenido al puente entre Frontend React y Backend NocoDB.</p>
+      </div>
+
       <HeaderClase 
-        tituloTema="La lectura comprensiva y el procesamiento de la información mediante preguntas lógicas fundamentales" 
-        nombreDocente="Prof. Ed. Media" 
-        horario="07:30 AM - 12:30 PM" 
+        tituloTema="La lectura comprensiva y el procesamiento de la información mediante preguntas lógicas fundamentales"
+        nombreDocente="Prof. Ed. Media"
+        horario="07:30 AM - 12:30 PM"
       />
 
-      {/* 2. Componente de Metas */}
       <ObjetivosCard 
-        competencia=" Aplica estrategias de lectura antes, durante y después del texto mediante preguntas y técnicas de análisis para potenciar el pensamiento lógico y creativo y lograr aprendizajes significativos." 
-        indicadorLogro="Demuestra comprensión de textos al responder preguntas de análisis y utilizar técnicas visuales antes, durante y después de la lectura para expresar conclusiones propias"
+        competencia="Aplica estrategias de lectura antes durante y después del texto mediante preguntas y técnicas de análisis para potenciar el pensamiento lógico y creativo y lograr aprendizajes significativos."
+        indicadorLogro="Demuestra comprensión de textos al responder preguntas de análisis y utilizar técnicas visuales antes durante y después de la lectura para expresar conclusiones propias."
       />
 
-      {/* 3. Sección de Actividades Dinámicas */}
-      <section style={{ background: '#ffffff', border: '1px solid #e0e0e0', borderRadius: '8px', padding: '1.2rem', boxShadow: '0 2px 4px rgba(0,0,0,0.05)' }}>
-        <h3 style={{ color: '#4f46e5', marginTop: 0, marginBottom: '1rem' }}>📋 Tareas y Actividades de la Sesión</h3>
-        
+      <section style={{ marginTop: '2rem' }}>
+        <h3 style={{ color: '#4f46e5', textAlign: 'center', marginBottom: '1.5rem' }}>
+          Tareas y Actividades de la Sesión
+        </h3>
+
+        <ListaActividades />
+
         <ActividadItem 
-          numero={1} 
-          descripcion="Activación de Presaberes: Estrategias Prelectoras y Organizador S-Q-A" 
+          numero="1"
+          descripcion="Activación de Presaberes: Estrategias Prelectoras y Organizador S-Q-A"
+          dificultad="Baja"
         />
+
         <ActividadItem 
-          numero={2} 
-          descripcion="Construcciòn de Aprendizaje: Lectura Guiada por Secciones y Análisis por Preguntas Clave" 
+          numero="2"
+          descripcion="Construcción de Aprendizaje: Lectura Guiada por Secciones y Análisis por Preguntas Clave"
+          dificultad="Media"
         />
+
         <ActividadItem 
-          numero={3} 
+          numero="3"
           descripcion="Consolidación del Aprendizaje: Síntesis Gráfica, Cierre del S-Q-A y Evaluación Metacognitiva"
+          dificultad="Alta"
         />
       </section>
+
     </div>
   );
 }
-
-export default App;
